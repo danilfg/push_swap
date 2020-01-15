@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2019/01/16 19:44:23 by jcremin           #+#    #+#             */
+/*   Updated: 2019/01/16 19:50:07 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+void	ft_putendl_fd(char const *s, int fd)
 {
-	
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

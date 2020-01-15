@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2018/12/01 20:05:34 by jcremin           #+#    #+#             */
+/*   Updated: 2019/05/03 16:50:22 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
-	
+	int		i;
+
+	i = 0;
+	while (*src != '\0')
+	{
+		*dst = *src;
+		dst++;
+		src++;
+		i++;
+	}
+	*dst = '\0';
+	return (dst - i);
 }

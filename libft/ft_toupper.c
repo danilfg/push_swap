@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2018/12/09 05:28:19 by jcremin           #+#    #+#             */
+/*   Updated: 2019/05/04 16:03:01 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+int		ft_toupper(int c)
 {
-	
+	char i;
+
+	i = (char)c;
+	if (c >= 'a' && c <= 'z')
+		return ((int)(c - 32));
+	return ((int)c);
 }

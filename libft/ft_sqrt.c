@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2018/11/20 14:27:13 by jcremin           #+#    #+#             */
+/*   Updated: 2019/04/17 12:42:42 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+int		ft_sqrt_mod(int nb)
 {
-	
+	int i;
+
+	i = 0;
+	if ((nb < 0) || (nb > 2147483647))
+		return (0);
+	while ((i * i) <= nb)
+	{
+		if ((i * i) == nb)
+			return (i);
+		i++;
+	}
+	return (i);
 }

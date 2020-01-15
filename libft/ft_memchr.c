@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2018/12/01 16:17:08 by jcremin           #+#    #+#             */
+/*   Updated: 2019/05/03 16:44:59 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	
+	unsigned char *s1;
+
+	s1 = (unsigned char*)s;
+	while (n)
+	{
+		if (*s1 == (unsigned char)c)
+		{
+			return (s1);
+		}
+		n--;
+		s1++;
+	}
+	return (NULL);
 }

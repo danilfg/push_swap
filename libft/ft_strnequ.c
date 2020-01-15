@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2018/12/16 19:23:27 by jcremin           #+#    #+#             */
+/*   Updated: 2019/01/24 20:12:03 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	
+	if (!s1 || !s2)
+		return (0);
+	while ((*s1 || *s2) && n > 0)
+	{
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
+		n--;
+	}
+	return (1);
 }

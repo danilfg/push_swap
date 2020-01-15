@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcremin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Created: 2018/12/02 17:32:30 by jcremin           #+#    #+#             */
+/*   Updated: 2019/05/03 16:49:31 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	
+	char *s1;
+
+	s1 = (char*)s;
+	if (c == '\0')
+	{
+		while (*s1)
+			s1++;
+		return (s1);
+	}
+	while (*s1)
+	{
+		if (*s1 == c)
+			return (s1);
+		s1++;
+	}
+	return (NULL);
 }
