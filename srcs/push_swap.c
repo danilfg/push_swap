@@ -6,11 +6,13 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 15:51:08 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/01/15 16:18:54 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		main(int argc, char *argv[])
 {
-	
+	t_stack_all		stack;
+
+
 }
