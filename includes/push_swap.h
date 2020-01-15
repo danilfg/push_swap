@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 16:12:28 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/01/15 16:15:48 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ typedef struct			s_stack_all
 	struct s_stack_a	*previous;
 	struct s_stack_a	*next;
 }						t_struct_all;
+
 
 #endif
