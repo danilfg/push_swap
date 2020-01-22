@@ -1,14 +1,14 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcremin <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 11:04:32 by jcremin           #+#    #+#              #
-#    Updated: 2019/10/07 11:04:35 by jcremin          ###   ########.fr        #
+#    Updated: 2020/01/22 14:40:33 by taegon-i         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 NAME = libft.a
 
@@ -88,7 +88,9 @@ SRC_LIST = ft_atoi.c\
 	ft_strtrim.c\
 	ft_tolower.c\
 	ft_toupper.c\
-	get_next_line.c
+	get_next_line.c\
+	ft_isnum.c\
+	ft_strsplit_free.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ_DIR = objects/
 OBJ_LIST = $(patsubst %.c, %.o, $(SRC_LIST))

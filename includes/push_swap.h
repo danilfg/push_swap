@@ -6,31 +6,29 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/22 13:47:20 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/01/22 15:04:12 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <../libft/libft.h>
-# include <unistd.h>
-
-# define ERROR write
+# include <stdio.h>
 
 typedef struct			s_stack
 {
 	int					value;
 	int					index;
-	struct s_stack_a	*previous;
-	struct s_stack_a	*next;
+	struct s_stack		*previous;
+	struct s_stack		*next;
 }						t_stack;
 
 typedef struct			s_stack_all
 {
-	t_stack				a_stack;
-	t_stack				b_stack;
-	int					a_size;
-	int					b_size;
+	t_stack				*a_stack;
+	t_stack				*b_stack;
+	size_t				a_size;
+	size_t				b_size;
 }						t_stack_all;
 
 /*

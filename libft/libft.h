@@ -6,7 +6,7 @@
 /*   By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:35:21 by jcremin           #+#    #+#             */
-/*   Updated: 2019/05/03 20:48:42 by jcremin          ###   ########.fr       */
+/*   Updated: 2020/01/22 14:40:52 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef				enum
+{
+	false,
+	true
+}					t_bool;
 
 typedef struct		s_list
 {
@@ -95,4 +101,6 @@ char				*ft_ftoa(float nb);
 int					ft_atoi_parse(char *str, int *k);
 void				ft_fzero(float *s, int n);
 char				*ft_strjoin_f(char *s1, char *s2, char type);
+t_bool				ft_isnum(char *str, int base);
+void				ft_strsplit_free(char ***strsplit);
 #endif

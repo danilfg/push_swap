@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_messages.c                                   :+:      :+:    :+:   */
+/*   ft_strsplit_free.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 13:25:04 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/22 15:09:11 by taegon-i         ###   ########.fr       */
+/*   Created: 2020/01/22 14:40:11 by taegon-i          #+#    #+#             */
+/*   Updated: 2020/01/22 14:40:59 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void		error_message(int n)
+void	ft_strsplit_free(char ***strsplit)
 {
-	if (n == 1)
-		printf("ERROR: only 1 arguments");
-	if (n == 2)
-		printf("ERROR: arguments is not numbers");
-	if (n == 3)
-		printf("ERROR: malloc error");
-	if (n == 4)
-		printf("ERROR: arguments is not INT's");
+	char	**current;
+
+	if (strsplit && *strsplit)
+	{
+		current = ((*strsplit));
+		while ((*current))
+			free((*(current++)));
+		free((*strsplit));
+		(*strsplit) = NULL;
+	}
 }
