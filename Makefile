@@ -6,7 +6,7 @@
 #    By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/24 18:43:04 by jcremin           #+#    #+#              #
-#    Updated: 2020/01/15 16:08:34 by taegon-i         ###   ########.fr        #
+#    Updated: 2020/01/22 13:26:01 by taegon-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ HEAD_DIR = ./includes/
 HEAD = $(addprefix $(HEAD_DIR), $(HEAD_LIST))
 
 SRC_DIR = ./srcs/
-SRC_LIST =	main.c/
+SRC_LIST =	push_swap.c
 
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))

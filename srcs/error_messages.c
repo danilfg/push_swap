@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error_messages.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/22 13:52:38 by taegon-i         ###   ########.fr       */
+/*   Created: 2020/01/22 13:25:04 by taegon-i          #+#    #+#             */
+/*   Updated: 2020/01/22 13:46:07 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int argc, char *argv[])
+void		error_message(int n)
 {
-	t_stack_all		stack_all;
-
-	if (argc < 2)
-	{
-		error_message(1);
-		return(0);
-	}
-	stack_all = contain_in_a(argv);
+	if (n != 1)
+		printf("ERORR: only 1 arguments");
 }

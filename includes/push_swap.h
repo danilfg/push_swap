@@ -6,13 +6,14 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/15 16:18:03 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/01/22 13:47:20 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <../libft/libft.h>
+# include <unistd.h>
 
 # define ERROR write
 
@@ -31,5 +32,17 @@ typedef struct			s_stack_all
 	int					a_size;
 	int					b_size;
 }						t_stack_all;
+
+/*
+**	push_swap.c
+*/
+
+int		main(int argc, char *argv[]);
+
+/*
+**	error_messages.c
+*/
+
+void		error_message(int n);
 
 #endif
