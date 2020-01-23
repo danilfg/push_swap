@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/11/24 18:43:04 by jcremin           #+#    #+#              #
-#    Updated: 2020/01/22 14:11:29 by taegon-i         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
 NAME = push_swap
 
@@ -30,10 +19,9 @@ SRC_LIST =	push_swap.c\
 			check_and_parse.c\
 			error_messages.c
 
-
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 
-OBJ_DIR = objects/
+OBJ_DIR = ./objects/
 OBJ_LIST = $(patsubst %.c, %.o, $(SRC_LIST))
 OBJ	= $(addprefix $(OBJ_DIR), $(OBJ_LIST))
 

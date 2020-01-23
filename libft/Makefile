@@ -6,7 +6,7 @@
 #    By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 11:04:32 by jcremin           #+#    #+#              #
-#    Updated: 2020/01/22 14:40:33 by taegon-i         ###   ########.fr        #
+#    Updated: 2020/01/23 19:37:52 by taegon-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,9 @@ SRC_LIST = ft_atoi.c\
 	ft_toupper.c\
 	get_next_line.c\
 	ft_isnum.c\
-	ft_strsplit_free.c
+	ft_strsplit_free.c\
+	ft_isprefix.c\
+	ft_isdigit_base.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ_DIR = objects/
 OBJ_LIST = $(patsubst %.c, %.o, $(SRC_LIST))

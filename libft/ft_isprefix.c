@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isprefix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/23 19:49:15 by taegon-i         ###   ########.fr       */
+/*   Created: 2020/01/23 19:34:39 by taegon-i          #+#    #+#             */
+/*   Updated: 2020/01/23 19:34:47 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		main(int argc, char *argv[])
+t_bool	ft_isprefix(const char *str, int base)
 {
-	t_stack_all		*stack_all;
+	size_t	i;
 
-	if (argc < 2)
+	i = 0;
+	if (base == 2 || base == 8 || base == 16)
 	{
-		error_message(1);
-		return(0);
+		if (str[i++] != '0')
+			return (false);
+		if (base == 2 && (ft_toupper(str[i]) == 'B'))
+			return (true);
+		if (base == 16 && (ft_toupper(str[i]) == 'X'))
+			return (true);
+		if (base == 8)
+			return (true);
 	}
-	if (!ft_isnum(argv[1], 10))
-	{
-		error_message(2);
-		return(0);
-	}
-	stack_all = contain_in_a(argc, argv);
-	return (0);
+	return (false);
 }

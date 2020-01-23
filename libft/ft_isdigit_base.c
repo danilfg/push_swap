@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/23 19:49:15 by taegon-i         ###   ########.fr       */
+/*   Created: 2020/01/23 19:37:02 by taegon-i          #+#    #+#             */
+/*   Updated: 2020/01/23 19:37:07 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		main(int argc, char *argv[])
+int		ft_isdigit_base(char c, int base)
 {
-	t_stack_all		*stack_all;
+	const char	*digits = "0123456789ABCDEF";
+	int			i;
 
-	if (argc < 2)
+	i = 0;
+	while (i < base)
 	{
-		error_message(1);
-		return(0);
+		if (ft_toupper(c) == digits[i])
+			return (i);
+		i++;
 	}
-	if (!ft_isnum(argv[1], 10))
-	{
-		error_message(2);
-		return(0);
-	}
-	stack_all = contain_in_a(argc, argv);
-	return (0);
+	return (-1);
 }
