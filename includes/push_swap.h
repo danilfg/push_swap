@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/22 15:04:12 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 10:31:48 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,17 @@ int		main(int argc, char *argv[]);
 */
 
 void		error_message(int n);
+
+/*
+**	check_and_parse.c
+*/
+
+void 		add_in_a_stack(t_stack_all *stack, t_stack *elem);
+void	parse_array(t_stack_all *stack, int argc, char **argv);
+t_stack		*create_elem(int number);
+void	parse_string(t_stack_all *stack, char *str);
+t_stack_all	*contain_in_a(int argc, char *argv[]);
+
+
 
 #endif

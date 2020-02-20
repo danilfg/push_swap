@@ -6,76 +6,38 @@
 #    By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/23 20:27:20 by taegon-i          #+#    #+#              #
-#    Updated: 2020/01/23 20:27:22 by taegon-i         ###   ########.fr        #
+#    Updated: 2020/02/19 11:27:50 by taegon-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+LIB = libft.a
+
 NAME = push_swap
 
-CC = gcc
-FLAGS = -Wall -Wextra -Werror
-LIBRARIES = -L$(LIBFT_DIR)
-INCLUDES = -I$(HEAD_DIR) -I$(LIBFT_HEAD)
+SRCS = ./libft/*.c
 
-LIBFT = $(LIBFT_DIR)libft.a
-LIBFT_DIR = ./libft/
-LIBFT_HEAD = $(LIB_DIR)
+SRCS2 = ./srcs/*.c
 
-HEAD_LIST = push_swap.h
-HEAD_DIR = ./includes/
-HEAD = $(addprefix $(HEAD_DIR), $(HEAD_LIST))
+SRO = ./*.o
 
-SRC_DIR = ./srcs/
-SRC_LIST =	push_swap.c\
-			check_and_parse.c\
-			error_messages.c
+HEADER_LIB = ./libft/
 
-SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
+HEADER_FILL = ./includes/
 
-OBJ_DIR = ./objects/
-OBJ_LIST = $(patsubst %.c, %.o, $(SRC_LIST))
-OBJ	= $(addprefix $(OBJ_DIR), $(OBJ_LIST))
-
-# COLORS
-
-GREEN = \033[0;32m
-RED = \033[0;31m
-BLUE = \033[0;34m
-RESET = \033[0m
-
-.PHONY: all clean fclean re
+COMM = -c -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ_DIR) $(OBJ)
-	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJ) -o $(NAME)
-	@echo "\n$(NAME): $(GREEN)object files were created$(RESET)"
-	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
-
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-	@echo "$(NAME): $(GREEN)$(OBJ_DIR) was created$(RESET)"
-
-$(OBJ_DIR)%.o : $(SRC_DIR)%.c $(HEAD)
-	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
-	@echo "$(GREEN).$(RESET)\c"
-
-$(LIBFT):
-	@echo "$(NAME): $(GREEN)Creating $(LIBFT)...$(RESET)"
-	@$(MAKE) -sC $(LIBFT_DIR)
-
+$(NAME):
+				@gcc $(COMM) $(SRCS) -I$(HEADER_LIB)
+				@ar rc $(LIB) $(SRO)
+				@ranlib $(LIB)
+				@rm -f $(SRO)
+				@gcc $(COMM) $(SRCS2) -I$(HEADER_FILL)
+				@gcc $(SRO) $(LIB) -o $(NAME)
 clean:
-	@$(MAKE) -sC $(LIBFT_DIR) clean
-	@rm -rf $(OBJ_DIR)
-	@echo "$(NAME): $(RED)$(OBJ_DIR) was deleted$(RESET)"
-	@echo "$(NAME): $(RED)object files were deleted$(RESET)"
-
+				@rm -f $(SRO)
 fclean: clean
-	@rm -f $(LIBFT)
-	@echo "$(NAME): $(RED)$(LIBFT) was deleted$(RESET)"
-	@rm -f $(NAME)
-	@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"
-
-re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+				@rm -f $(LIB)
+				@rm -f $(NAME)
+re: fclean all

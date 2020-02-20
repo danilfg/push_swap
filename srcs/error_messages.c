@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:25:04 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/22 15:09:11 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 10:16:21 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void		error_message(int n)
 {
 	if (n == 1)
-		printf("ERROR: only 1 arguments");
+		printf("ERROR: need 1 arguments\n");
 	if (n == 2)
-		printf("ERROR: arguments is not numbers");
+		printf("ERROR: arguments is not numbers\n");
 	if (n == 3)
-		printf("ERROR: malloc error");
+		printf("ERROR: malloc error\n");
 	if (n == 4)
-		printf("ERROR: arguments is not INT's");
+		printf("ERROR: arguments is not INT's\n");
 }
