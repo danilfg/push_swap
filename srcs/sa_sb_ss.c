@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:12:05 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 12:49:53 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:54:29 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sa(t_stack *stack)
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
-	printf("sa");
+	printf("sa\n");
 }
 
 void	sb(t_stack *stack)
@@ -29,12 +29,12 @@ void	sb(t_stack *stack)
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
-	printf("sb");
+	printf("sb\n");
 }
 
-void	ss(t_stack *stack)
+void	ss(t_stack_all *stack)
 {
-	sa(stack);
-	sb(stack);
-	printf("ss");
+	sa(stack->a_stack);
+	sb(stack->b_stack);
+	printf("ss\n");
 }
