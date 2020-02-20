@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 10:55:32 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 12:15:15 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,35 @@ int		main(int argc, char *argv[])
 	t_stack_all		*stack_all;
 
 	if (argc < 2)
-	{
 		error_message(1);
-		return(0);
-	}
-	// if (!ft_isnum(argv[1], 10))
-	// {
-	// 	error_message(2);
-	// 	return(0);
-	// }
 	stack_all = contain_in_a(argc, argv);
 
-	printf("previous->value - %d\n", stack_all->a_stack->previous->value);
-	printf("value - %d\n", stack_all->a_stack->value);
-	printf("next->value - %d\n", stack_all->a_stack->next->value);
-	printf("next->next->value - %d\n", stack_all->a_stack->next->next->value);
-	printf("next->next->next->value - %d\n\n", stack_all->a_stack->next->next->next->value);
+	sa(stack_all->a_stack);
 
-	printf("previous->index - %d\n", stack_all->a_stack->previous->index);
-	printf("index - %d\n", stack_all->a_stack->index);
-	printf("next->index - %d\n\n", stack_all->a_stack->next->index);
+	printf("A previous->value - %d\n", stack_all->a_stack->previous->value);
+	printf("A value - %d\n", stack_all->a_stack->value);
+	printf("A next->value - %d\n", stack_all->a_stack->next->value);
+	printf("A next->next->value - %d\n", stack_all->a_stack->next->next->value);
+	printf("A next->next->next->value - %d\n\n", stack_all->a_stack->next->next->next->value);
+
+	// printf("A previous->index - %d\n", stack_all->a_stack->previous->index);
+	// printf("A index - %d\n", stack_all->a_stack->index);
+	// printf("A next->index - %d\n\n", stack_all->a_stack->next->index);
+
+
+	// printf("B previous->index - %d\n", stack_all->b_stack->previous->index);
+	// printf("B index - %d\n", stack_all->b_stack->index);
+	// printf("B next->index - %d\n\n", stack_all->b_stack->next->index);
+
 
 	printf("a_size - %zu\n", stack_all->a_size);
 	printf("b_size - %zu\n", stack_all->b_size);
+
+	printf("B revious->value - %d\n", stack_all->b_stack->previous->value);
+	printf("B value - %d\n", stack_all->b_stack->value);
+	printf("B next->value - %d\n", stack_all->b_stack->next->value);
+	printf("B next->next->value - %d\n", stack_all->b_stack->next->next->value);
+	printf("B next->next->next->value - %d\n\n", stack_all->b_stack->next->next->next->value);
 
 	return (0);
 }

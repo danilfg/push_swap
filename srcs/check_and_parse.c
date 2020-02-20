@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:48:52 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 11:43:39 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 13:05:43 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void		add_in_a_stack(t_stack_all *stack, t_stack *elem)
 		if (!stack->a_stack)
 		{
 			stack->a_stack = elem;
-			stack->a_stack->previous = stack->a_stack;
-			stack->a_stack->next = stack->a_stack;
+			stack->a_stack->previous = NULL;
+			stack->a_stack->next = NULL;
 		}
 		else
 		{

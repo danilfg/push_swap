@@ -6,7 +6,7 @@
 #    By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/24 18:43:04 by jcremin           #+#    #+#              #
-#    Updated: 2019/10/10 10:42:26 by taegon-i         ###   ########.fr        #
+#    Updated: 2020/02/20 13:17:17 by taegon-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ HEAD = $(addprefix $(HEAD_DIR), $(HEAD_LIST))
 SRC_DIR = ./srcs/
 SRC_LIST = push_swap.c\
 	check_and_parse.c\
-	error_messages.c
+	error_messages.c\
+	sa_sb_ss.c\
+	pa_pb.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 
 OBJ_DIR = objects/

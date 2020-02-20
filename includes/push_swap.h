@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 11:09:01 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 12:46:07 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ t_stack		*create_elem(int number);
 void	parse_string(t_stack_all *stack, char *str);
 t_stack_all	*contain_in_a(int argc, char *argv[]);
 
+/*
+**	sa_sb_ss.c
+*/
+
+void	sa(t_stack *stack);
 
 
 #endif
