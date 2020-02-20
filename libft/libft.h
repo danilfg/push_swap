@@ -110,5 +110,6 @@ void				ft_strsplit_free(char ***strsplit);
 t_bool				ft_isprefix(const char *str, int base);
 int					ft_isdigit_base(char c, int base);
 t_bool				ft_isint(char *str);
+int						ft_islower(int c);
 
 #endif
