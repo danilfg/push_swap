@@ -92,7 +92,8 @@ SRC_LIST = ft_atoi.c\
 	ft_isnum.c\
 	ft_strsplit_free.c\
 	ft_isprefix.c\
-	ft_isdigit_base.c
+	ft_isdigit_base.c\
+	ft_isint.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ_DIR = objects/
 OBJ_LIST = $(patsubst %.c, %.o, $(SRC_LIST))
