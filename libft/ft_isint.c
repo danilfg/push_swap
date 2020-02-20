@@ -6,37 +6,18 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 14:48:33 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/01/22 14:48:36 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 11:04:44 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isint(const char *str, t_bool strict)
+t_bool	ft_isint(char *str)
 {
-	unsigned int	result;
-	unsigned int	border;
-	int				i;
-	int				sign;
-	int				digits;
+	long	nbr;
 
-	result = 0;
-	digits = 0;
-	border = (unsigned int)(FT_INT_MAX / 10);
-	i = 0;
-	while (!strict && ft_isspace(str[i]))
-		i++;
-	sign = (str[i] == '-') ? -1 : 1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]) && ++digits)
-	{
-		if (((result > border || (result == border && (str[i] - '0') > 7))
-				&& sign == 1)
-			|| ((result > border || (result == border && (str[i] - '0') > 8))
-				&& sign == -1))
-			return (false);
-		result = result * 10 + (str[i++] - '0');
-	}
-	return (!str[i] && digits);
+	nbr = ft_atoi(str);
+	if (ft_isnum(str, 10) && nbr >= -2147483648 && nbr <= 2147483647)
+		return (true);
+	return (false);
 }

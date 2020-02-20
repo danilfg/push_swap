@@ -6,7 +6,7 @@
 /*   By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:35:21 by jcremin           #+#    #+#             */
-/*   Updated: 2020/02/19 11:28:48 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 10:47:46 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ t_bool				ft_isnum(char *str, int base);
 void				ft_strsplit_free(char ***strsplit);
 t_bool				ft_isprefix(const char *str, int base);
 int					ft_isdigit_base(char c, int base);
-t_bool				ft_isint(const char *str, t_bool strict);
+t_bool				ft_isint(char *str);
 
 #endif

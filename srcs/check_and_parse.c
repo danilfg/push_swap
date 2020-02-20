@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:48:52 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 10:31:31 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/20 11:43:39 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	parse_array(t_stack_all *stack, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (!ft_isint(argv[i], false))
+		if (!ft_isint(argv[i]))
 			error_message(4);
 		add_in_a_stack(stack, create_elem(ft_atoi(argv[i++])));
 	}
@@ -71,9 +71,16 @@ void	parse_string(t_stack_all *stack, char *str)
 
 	numbers = ft_strsplit(str, ' ');
 	i = 0;
+	// printf("numbers[0] = %s\n", numbers[0]);
+	// printf("numbers[1] = %s\n", numbers[1]);
+	// printf("numbers[2] = %s\n", numbers[2]);
+	// printf("atoi(ав) = %d\n", ft_atoi("ав"));
+
 	while (numbers[i])
 	{
-		if (!ft_isint(numbers[i], false))
+		if (!ft_isnum(numbers[i], 10))
+			error_message(2);
+		if (!ft_isint(numbers[i]))
 			error_message(4);
 		add_in_a_stack(stack, create_elem(ft_atoi(numbers[i++])));
 	}
@@ -84,21 +91,18 @@ void	parse_string(t_stack_all *stack, char *str)
 t_stack_all	*contain_in_a(int argc, char *argv[])
 {
 	t_stack_all *stack;
-	int		i;
-	//int		index;
-	//int		j;
-
 
 	if (!(stack = (t_stack_all *)ft_memalloc(sizeof(t_stack_all))))
 		error_message(3);
 	stack->a_stack = NULL;
 	stack->a_size = 0;
-	i = 0;
+	stack->b_stack = NULL;
+	stack->b_size = 0;
 	if (argc == 2)
 		parse_string(stack, argv[1]);
 	else
 		parse_array(stack, argc, argv);
 	if (!stack->a_size)
-		error_message(2);;
+		error_message(2);
 	return (stack);
 }
