@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 15:56:33 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/28 13:11:52 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ int		main(int argc, char *argv[])
 		error_message(1);
 	stack_all = contain_in_a(argc, argv);
 
-	// sa(stack_all->a_stack);
-	pb(stack_all);
-	pb(stack_all);
 
-	ss(stack_all);
-	pa(stack_all);
-	sa(stack_all->a_stack);
-	pa(stack_all);
+	 ra(stack_all->a_stack);
+	//  pb(stack_all);
+	// pb(stack_all);
+	// pb(stack_all);
+	// pb(stack_all);
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:48:52 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 15:52:08 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/28 15:05:50 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,6 @@ void		add_in_stack(t_stack_all *stack, t_stack *elem)
 		}
 		else
 		{
-			// tmp = elem;
-			// elem = stack->a_stack;
-			// elem = tmp;
-			//
-			//
 			tmp = stack->a_stack;
 			while (tmp->next)
 			{
@@ -41,20 +36,10 @@ void		add_in_stack(t_stack_all *stack, t_stack *elem)
 			}
 			tmp->next = elem;
 			elem->previous = tmp;
-
-
-
-
-
-			// tmp = stack->a_stack->previous;
-			// elem->previous = tmp;
-			// tmp->next = elem;
-			// elem->next = stack->a_stack;
-			// stack->a_stack->previous = elem;
 		}
+		stack->a_stack->last = elem;
 		stack->a_size++;
 		stack->a_stack->index = stack->a_size;
-
 	}
 }
 

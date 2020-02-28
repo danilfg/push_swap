@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 15:55:18 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/02/28 14:56:41 by jcremin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct			s_stack
 	int					index;
 	struct s_stack		*previous;
 	struct s_stack		*next;
+	struct s_stack		*last;
 }						t_stack;
 
 typedef struct			s_stack_all
@@ -70,7 +71,11 @@ void	pb(t_stack_all *stack_all);
 void		add_in_a_stack(t_stack_all *stack, t_stack *elem);
 void		add_in_b_stack(t_stack_all *stack, t_stack *elem);
 
+/*
+**	ra_rb_rr.c
+*/
 
+void	ra(t_stack *stack);
 
 
 #endif
