@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:54:42 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/02 10:51:56 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:17:51 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void		add_in_b_stack(t_stack_all *stack, t_stack *elem)
 			stack->b_stack = elem;
 			stack->b_stack->previous = NULL;
 			stack->b_stack->next = NULL;
+			stack->b_stack->last = elem;
+
 		}
 		else
 		{
@@ -30,14 +32,9 @@ void		add_in_b_stack(t_stack_all *stack, t_stack *elem)
 			stack->b_stack = elem;
 			stack->b_stack->next = tmp;
 			stack->b_stack->previous = elem;
-
-			// tmp = stack->b_stack;
-			// while (tmp->next)
-			// {
-			// 	tmp = tmp->next;
-			// }
-			// tmp->next = elem;
-			// elem->previous = tmp;
+			while(tmp->next)
+				tmp = tmp->next;
+			stack->b_stack->last = tmp;
 		}
 		stack->b_size++;
 	}
@@ -54,6 +51,7 @@ void		add_in_a_stack(t_stack_all *stack, t_stack *elem)
 			stack->a_stack = elem;
 			stack->a_stack->previous = NULL;
 			stack->a_stack->next = NULL;
+			stack->a_stack->last = elem;
 		}
 		else
 		{
@@ -61,14 +59,9 @@ void		add_in_a_stack(t_stack_all *stack, t_stack *elem)
 			stack->a_stack = elem;
 			stack->a_stack->next = tmp;
 			stack->a_stack->previous = elem;
-
-			// tmp = stack->b_stack;
-			// while (tmp->next)
-			// {
-			// 	tmp = tmp->next;
-			// }
-			// tmp->next = elem;
-			// elem->previous = tmp;
+			while(tmp->next)
+				tmp = tmp->next;
+			stack->a_stack->last = tmp;
 		}
 		stack->a_size++;
 	}
@@ -76,6 +69,8 @@ void		add_in_a_stack(t_stack_all *stack, t_stack *elem)
 
 void	pa(t_stack_all *stack_all)
 {
+	t_stack *tmp;
+
 	if (stack_all->b_stack)
 	{
 		add_in_a_stack(stack_all, create_elem(stack_all->b_stack->value));
@@ -84,6 +79,10 @@ void	pa(t_stack_all *stack_all)
 		else
 		{
 			stack_all->b_stack = stack_all->b_stack->next;
+			tmp = stack_all->a_stack;
+			while(tmp->next)
+				tmp = tmp->next;
+			stack_all->a_stack->last = tmp;
 			stack_all->b_stack->previous = NULL;
 		}
 		stack_all->b_size--;
@@ -93,17 +92,30 @@ void	pa(t_stack_all *stack_all)
 
 void	pb(t_stack_all *stack_all)
 {
+	t_stack *tmp;
+
 	if (stack_all->a_stack)
 	{
 		add_in_b_stack(stack_all, create_elem(stack_all->a_stack->value));
+
 		if (!stack_all->a_stack->next)
 			stack_all->a_stack = NULL;
 		else
 		{
 			stack_all->a_stack = stack_all->a_stack->next;
+			tmp = stack_all->a_stack;
+			while(tmp->next)
+				tmp = tmp->next;
+			stack_all->a_stack->last = tmp;
 			stack_all->a_stack->previous = NULL;
 		}
+		// while(stack_all->a_stack)
+		// {
+		// 	printf("A value - %d\n", stack_all->a_stack->value);
+		// 	stack_all->a_stack = stack_all->a_stack->next;
+		// }
 		stack_all->a_size--;
+
 		printf("pb\n");
 	}
 }

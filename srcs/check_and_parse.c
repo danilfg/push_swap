@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:48:52 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/02 11:00:22 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/02 13:34:31 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		add_in_stack(t_stack_all *stack, t_stack *elem)
 		}
 		stack->a_stack->last = elem;
 		stack->a_size++;
+
 	}
 }
 
@@ -77,11 +78,6 @@ void	parse_string(t_stack_all *stack, char *str)
 
 	numbers = ft_strsplit(str, ' ');
 	i = 0;
-	// printf("numbers[0] = %s\n", numbers[0]);
-	// printf("numbers[1] = %s\n", numbers[1]);
-	// printf("numbers[2] = %s\n", numbers[2]);
-	// printf("atoi(ав) = %d\n", ft_atoi("ав"));
-
 	while (numbers[i])
 	{
 		if (!ft_isnum(numbers[i], 10))
@@ -109,6 +105,7 @@ t_stack_all	*contain_in_a(int argc, char *argv[])
 		parse_string(stack, argv[1]);
 	else
 		parse_array(stack, argc, argv);
+
 
 	if (!stack->a_size)
 		error_message(2);

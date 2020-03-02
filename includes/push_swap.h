@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/02 11:03:31 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:59:49 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,13 @@ void		add_in_b_stack(t_stack_all *stack, t_stack *elem);
 */
 
 void	ra(t_stack_all *stack);
-
 void	rb(t_stack_all *stack);
-
 void	rr(t_stack_all *stack);
 
+/*
+**	rra_rrb_rrr.c
+*/
+
+void	rrb(t_stack_all *stack);
 
 #endif

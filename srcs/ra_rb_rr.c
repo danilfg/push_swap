@@ -6,35 +6,70 @@
 /*   By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 12:24:23 by jcremin           #+#    #+#             */
-/*   Updated: 2020/03/02 11:26:22 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:05:45 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void		add_in_stack_end(t_stack *stack, t_stack *elem)
+{
+	t_stack	*tmp;
+
+	if (stack && elem)
+	{
+		if (!stack)
+		{
+			stack = elem;
+			stack->previous = NULL;
+			stack->next = NULL;
+		}
+		else
+		{
+			tmp = stack;
+			while (tmp->next)
+			{
+				tmp = tmp->next;
+			}
+			tmp->next = elem;
+			elem->previous = tmp;
+		}
+		stack->last = elem;
+	}
+}
+
 void	ra(t_stack_all *stack)
 {
-	t_stack *temp1;
-	t_stack *temp2;
+	int tmp;
 
-	temp1 = NULL;
-	temp2 = NULL;
 	if (stack->a_stack)
 	{
 		if (stack->a_stack->next)
 		{
 			if (stack->a_stack->next->next)
 			{
-				temp1 = create_elem(stack->a_stack->value);
-				temp2 = stack->a_stack;
-				while (temp2->next)
-					temp2 = temp2->next;
-				temp2->next = temp1;
-				temp1->previous = temp2;
-				*stack->a_stack = *stack->a_stack->next;
+				// temp1 = stack->a_stack;
+				// tmp = stack->a_stack->value;
+				//
+				// while (stack->a_stack->next)
+				// {
+				// 	stack->a_stack->value = stack->a_stack->next->value;
+				// 	stack->a_stack = stack->a_stack->next;
+				// }
+				// stack->a_stack->value = tmp;
+				// stack->a_stack = temp1;
+
+				tmp = stack->a_stack->value;
+				stack->a_stack = stack->a_stack->next;
+				add_in_stack_end(stack->a_stack, create_elem(tmp));
+				stack->a_stack->previous = NULL;
 			}
 			else
+			{
+				stack->check = 1;
 				sa(stack);
+				stack->check = 0;
+			}
 		}
 	}
 	if (stack->check == 0)
@@ -43,27 +78,36 @@ void	ra(t_stack_all *stack)
 
 void	rb(t_stack_all *stack)
 {
-	t_stack *temp1;
-	t_stack *temp2;
+	int tmp;
 
-	temp1 = NULL;
-	temp2 = NULL;
 	if (stack->b_stack)
 	{
 		if (stack->b_stack->next)
 		{
 			if (stack->b_stack->next->next)
 			{
-				temp1 = create_elem(stack->b_stack->value);
-				temp2 = stack->b_stack;
-				while (temp2->next)
-					temp2 = temp2->next;
-				temp2->next = temp1;
-				temp1->previous = temp2;
-				*stack->b_stack = *stack->b_stack->next;
+				// temp1 = stack->a_stack;
+				// tmp = stack->a_stack->value;
+				//
+				// while (stack->a_stack->next)
+				// {
+				// 	stack->a_stack->value = stack->a_stack->next->value;
+				// 	stack->a_stack = stack->a_stack->next;
+				// }
+				// stack->a_stack->value = tmp;
+				// stack->a_stack = temp1;
+
+				tmp = stack->b_stack->value;
+				stack->b_stack = stack->b_stack->next;
+				add_in_stack_end(stack->b_stack, create_elem(tmp));
+				stack->b_stack->previous = NULL;
 			}
 			else
-				sa(stack);
+			{
+				stack->check = 1;
+				sb(stack);
+				stack->check = 0;
+			}
 		}
 	}
 	if (stack->check == 0)
