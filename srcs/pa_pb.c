@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:54:42 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/20 15:52:58 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/02 10:51:56 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void		add_in_b_stack(t_stack_all *stack, t_stack *elem)
 			// elem->previous = tmp;
 		}
 		stack->b_size++;
-		stack->b_stack->index = stack->b_size;
 	}
 }
 
@@ -72,7 +71,6 @@ void		add_in_a_stack(t_stack_all *stack, t_stack *elem)
 			// elem->previous = tmp;
 		}
 		stack->a_size++;
-		stack->a_stack->index = stack->a_size;
 	}
 }
 

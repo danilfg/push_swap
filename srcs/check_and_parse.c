@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:48:52 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/28 15:05:50 by jcremin          ###   ########.fr       */
+/*   Updated: 2020/03/02 11:00:22 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void		add_in_stack(t_stack_all *stack, t_stack *elem)
 		}
 		stack->a_stack->last = elem;
 		stack->a_size++;
-		stack->a_stack->index = stack->a_size;
 	}
 }
 
@@ -67,7 +66,6 @@ t_stack		*create_elem(int number)
 	new->value = number;
 	new->previous = NULL;
 	new->next = NULL;
-	new->index = 0;
 	return (new);
 }
 
@@ -106,6 +104,7 @@ t_stack_all	*contain_in_a(int argc, char *argv[])
 	stack->a_size = 0;
 	stack->b_stack = NULL;
 	stack->b_size = 0;
+	stack->check = 0;
 	if (argc == 2)
 		parse_string(stack, argv[1]);
 	else

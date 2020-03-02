@@ -6,41 +6,45 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:12:05 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/02/28 12:15:45 by jcremin          ###   ########.fr       */
+/*   Updated: 2020/03/02 11:26:34 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *stack)
+void	sa(t_stack_all *stack)
 {
 	int tmp;
 
-	if (stack->next)
+	if (stack->a_stack->next)
 	{
-		tmp = stack->value;
-		stack->value = stack->next->value;
-		stack->next->value = tmp;
-		printf("sa\n");
+		tmp = stack->a_stack->value;
+		stack->a_stack->value = stack->a_stack->next->value;
+		stack->a_stack->next->value = tmp;
+		if (stack->check == 0)
+			printf("sa\n");
 	}
 }
 
-void	sb(t_stack *stack)
+void	sb(t_stack_all *stack)
 {
 	int tmp;
 
-	if (stack->next)
+	if (stack->b_stack->next)
 	{
-		tmp = stack->value;
-		stack->value = stack->next->value;
-		stack->next->value = tmp;
-		printf("sb\n");
+		tmp = stack->b_stack->value;
+		stack->b_stack->value = stack->b_stack->next->value;
+		stack->b_stack->next->value = tmp;
+		if (stack->check == 0)
+			printf("sb\n");
 	}
 }
 
 void	ss(t_stack_all *stack)
 {
-	sa(stack->a_stack);
-	sb(stack->b_stack);
+	stack->check = 1;
+	sa(stack);
+	sb(stack);
+	stack->check = 0;
 	printf("ss\n");
 }
