@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/03 15:14:48 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 16:00:42 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ void	rrx(t_stack_all *stack_all, t_stack *stack);
 **	sort.c
 */
 
-void	found_small(t_stack *stack);
+size_t	found_small(t_stack *stack);
+void	small_to_up_stack(t_stack_all *stack_all, size_t counter);
+
 
 #endif

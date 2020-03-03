@@ -6,19 +6,21 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 13:50:32 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/03 15:18:58 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 16:17:07 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	found_small(t_stack *stack)
+size_t	found_small(t_stack *stack)
 {
 	int value;
-	int counter;
+	size_t counter;
+	int check;
 	t_stack *tmp;
 
-	counter = 0;
+	counter = 1;
+	check = 1;
 	tmp = NULL;
 	value = stack->value;
 	tmp = stack;
@@ -28,19 +30,41 @@ void	found_small(t_stack *stack)
 		{
 			value = stack->value;
 			tmp = stack;
+			check = 1;
 		}
 		else
 		{
+			printf("CHECK2 = %d\n", check);
+
 			stack = stack->next;
-			counter++;
+
+			if (stack && check == 0)
+			{
+				counter++;
+				printf("COUNTER2 = %zu\n", counter);
+
+			}
+			check = 0;
+			
 		}
+
+
 	}
 	ft_putnbr(value);
-	ft_putnbr(tmp->value);
-
+	write(1, "\n", 1);
+	// ft_putnbr(tmp->value);
+	// write(1, "\n", 1);
+	//
+	ft_putnbr(counter);
+	write(1, "\n", 1);
+	//
+	return (counter);
 }
 
-// void	small_to_up_stack(t_stack_all *stack)
+// void	small_to_up_stack(t_stack_all *stack_all, size_t counter)
 // {
-//
+// 	if (counter > stack_all->a_size % 2)
+// 	{
+// 		while
+// 	}
 // }
