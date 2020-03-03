@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/02 15:29:56 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 11:53:46 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ int		main(int argc, char *argv[])
 	stack_all = contain_in_a(argc, argv);
 
 
+	// pb(stack_all);
+
+	pb(stack_all);
 	pb(stack_all);
 
-
 	pb(stack_all);
 	pb(stack_all);
-	// ft_putnbr(stack_all->b_stack->last->value);
+	pb(stack_all);
 	rrb(stack_all);
-	// ft_putnbr(stack_all->a_stack->last->value);
-	// ft_putnbr(stack_all->b_stack->last->value);
 
 
 	// rb(stack_all);
@@ -37,6 +37,7 @@ int		main(int argc, char *argv[])
 
 	// ss(stack_all);
 	// sb(stack_all);
+
 	while(stack_all->a_stack)
 	{
 		printf("A value - %d\n", stack_all->a_stack->value);
@@ -48,11 +49,13 @@ int		main(int argc, char *argv[])
 	// 	printf("B value - %d\n", stack_all->b_stack->value);
 	// 	stack_all->b_stack = stack_all->b_stack->next;
 	// }
+
 	while(stack_all->b_stack)
 	{
-		printf("B value - %d\n", stack_all->b_stack->last->value);
-		stack_all->b_stack = stack_all->b_stack->last->previous;
+		printf("B value - %d\n", stack_all->b_stack->value);
+		stack_all->b_stack = stack_all->b_stack->next;
 	}
+
 	printf("a_size - %zu\n", stack_all->a_size);
 	printf("b_size - %zu\n", stack_all->b_size);
 
