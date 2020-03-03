@@ -6,7 +6,7 @@
 #    By: jcremin <jcremin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/24 18:43:04 by jcremin           #+#    #+#              #
-#    Updated: 2020/03/03 12:06:19 by taegon-i         ###   ########.fr        #
+#    Updated: 2020/03/03 15:15:02 by taegon-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC_LIST = push_swap.c\
 	pa_pb.c\
 	ra_rb_rr.c\
 	rra_rrb_rrr.c\
-	utils.c
+	utils.c\
+	sort.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 
 OBJ_DIR = objects/

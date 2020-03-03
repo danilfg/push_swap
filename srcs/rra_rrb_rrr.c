@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 11:30:22 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/03 12:14:53 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 13:50:02 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	rrb(t_stack_all *stack)
 				stack->check = 0;
 			}
 		}
+		else
+			stack->check = 1;
 	}
 	if (stack->check == 0)
 		printf("rrb\n");
@@ -91,7 +93,6 @@ void	rra(t_stack_all *stack)
 	}
 	if (stack->check == 0)
 		printf("rra\n");
-	stack->check = 0;
 }
 
 void	rrr(t_stack_all *stack)
