@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 11:30:22 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/03 11:52:00 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 11:58:26 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,48 @@ void	rrb(t_stack_all *stack)
 	}
 	if (stack->check == 0)
 		printf("rrb\n");
+}
+
+void	rra(t_stack_all *stack)
+{
+	t_stack *tmp;
+	t_stack *tmp_last;
+
+
+	tmp = NULL;
+	tmp_last = NULL;
+
+	if (stack->a_stack)
+	{
+		if (stack->a_stack->next)
+		{
+			if (stack->a_stack->next->next)
+			{
+				tmp = stack->a_stack;
+				tmp_last = stack->a_stack->last;
+
+				while (tmp->next != stack->a_stack->last)
+					tmp = tmp->next;
+				stack->a_stack->last = tmp;
+
+				stack->a_stack->last->next = NULL;
+
+				tmp_last->next = stack->a_stack;
+				tmp_last->previous = NULL;
+				stack->a_stack = tmp_last;
+			}
+			else
+			{
+				stack->check = 1;
+				sa(stack);
+				stack->check = 0;
+			}
+		}
+		else
+			stack->check = 1;
+	}
+	if (stack->check == 0)
+		printf("rra\n");
+	stack->check = 0;
+
 }
