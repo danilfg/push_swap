@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:23:46 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/03 11:56:08 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 12:15:06 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,13 @@ void	rr(t_stack_all *stack);
 
 void	rrb(t_stack_all *stack);
 void	rra(t_stack_all *stack);
+void	rrr(t_stack_all *stack);
+
+/*
+**	utils.c
+*/
+
+void	rrx(t_stack_all *stack_all, t_stack *stack);
+
 
 #endif

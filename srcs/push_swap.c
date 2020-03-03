@@ -6,7 +6,7 @@
 /*   By: taegon-i <taegon-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 15:24:29 by taegon-i          #+#    #+#             */
-/*   Updated: 2020/03/03 11:53:46 by taegon-i         ###   ########.fr       */
+/*   Updated: 2020/03/03 12:15:37 by taegon-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ int		main(int argc, char *argv[])
 
 	// pb(stack_all);
 
-	pb(stack_all);
-	pb(stack_all);
 
 	pb(stack_all);
 	pb(stack_all);
 	pb(stack_all);
-	rrb(stack_all);
+	// rrb(stack_all);
+	// rra(stack_all);
+	rrr(stack_all);
+
 
 
 	// rb(stack_all);
